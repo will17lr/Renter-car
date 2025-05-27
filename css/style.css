@@ -220,3 +220,98 @@ footer {
   text-align: center;
   color: #333;
 }
+.car-horizontal {
+  display: flex;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+  background-color: #fff;
+  margin-bottom: 1rem;
+}
+
+.car-image {
+  flex: 0 0 150px;
+  background-color: #f9f9f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.car-image img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.car-info {
+  flex: 1;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.car-title {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.car-text {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.car-price {
+  font-weight: bold;
+  color: #007bff;
+  margin: 0.5rem 0;
+}
+
+.btn-reserve {
+  align-self: flex-start;
+  padding: 0.4rem 1rem;
+}
+/* ====== CARTE HORIZONTALE FIXE (mobile + desktop) ====== */
+.card.car-horizontal {
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+  gap: 1rem;
+  align-items: center;
+  height: 100%;
+}
+
+.card.car-horizontal img {
+  width: 120px;
+  height: auto;
+  object-fit: contain;
+  background: #f9f9f9;
+  border-radius: 5px;
+}
+
+.card.car-horizontal .card-body {
+  flex: 1;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card.car-horizontal .btn {
+  align-self: flex-start;
+  margin-top: 0.5rem;
+}
+html {
+  scroll-behavior: smooth;
+}
+@media (min-width: 1200px) {
+  .navbar-expand-xl .navbar-collapse {
+    display: flex !important;
+    flex-basis: auto;
+  }
+
+  .navbar-expand-xl .navbar-toggler {
+    display: none;
+  }
+}

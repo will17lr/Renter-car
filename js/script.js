@@ -19,15 +19,15 @@ function renderCars(cars) {
     col.className = "car-col";
 
     col.innerHTML = `
-      <div class="card h-100">
-        <img src="${car.cover}" class="card-img-top" alt="${car.model}">
-        <div class="card-body">
-          <h5 class="card-title">${car.model} (${car.year})</h5>
-          <p class="card-text">
-            ${car.power_hp}ch – ${car.transmission} – ${car.autonomy_km} km
-          </p>
-          <p class="fw-bold text-primary">${car.price}€ / jour</p>
-          <a href="#" class="btn btn-success w-100">Réserver</a>
+      <div class="card car-horizontal">
+        <div class="car-image">
+          <img src="${car.cover}" alt="${car.model}">
+        </div>
+        <div class="car-info">
+          <h5 class="car-title">${car.model} (${car.year})</h5>
+          <p class="car-text">${car.power_hp}ch – ${car.transmission} – ${car.autonomy_km} km</p>
+          <p class="car-price">${car.price}€ / jour</p>
+          <a href="#" class="btn btn-success btn-reserve">Réserver</a>
         </div>
       </div>
     `;
@@ -38,7 +38,7 @@ function renderCars(cars) {
 
 // === Tri dynamique ===
 function sortCars(criteria) {
-  const cars = [...carsData]; // éviter mutation directe
+  const cars = [...carsData];
   switch (criteria) {
     case "price-asc":
       cars.sort((a, b) => a.price - b.price);
@@ -56,22 +56,20 @@ function sortCars(criteria) {
   renderCars(cars);
 }
 
-// === Écouteur sur le tri ===
+// === Listener du tri ===
 sortSelect.addEventListener("change", (e) => {
   sortCars(e.target.value);
 });
 
-// === Récupération des données via fetch ===
+// === Chargement des données ===
 fetch("http://localhost:3000/cars")
   .then(res => {
-    if (!res.ok) {
-      throw new Error("Erreur de réponse du serveur");
-    }
+    if (!res.ok) throw new Error("Erreur serveur");
     return res.json();
   })
   .then(data => {
     carsData = data;
-    renderCars(data); // affichage initial
+    renderCars(data);
   })
   .catch(error => {
     console.error("Erreur de chargement :", error);
