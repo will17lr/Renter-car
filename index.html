@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Renter-car - Location de véhicules de luxe</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="icon" href="images/favicon.ico" />
+  <meta name="description" content="Renter-car : location de véhicules de luxe 24h/24, 7j/7 partout en France.">
+
+</head>
+<body>
+<!-- NAVBAR RESPONSIVE -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 py-3 shadow-sm">
+  <a class="navbar-brand fw-bold fs-4" href="#">🚗 Renter-car</a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Ouvrir le menu">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ms-auto gap-2">
+      <li class="nav-item"><a class="nav-link active" href="#">Louer une voiture</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Louer un utilitaire</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Réserver un chauffeur</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Nos agences</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Mon compte</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+  <!-- HERO AVEC FOND -->
+  <header class="hero d-flex flex-column justify-content-center align-items-center text-white text-center">
+    <h1>Bienvenue à bord</h1>
+    <p>Location de voiture 24h/24 et 7j/7</p>
+<form class="search-form" aria-label="Formulaire de recherche">
+  <select class="form-select" name="adresse" aria-label="Adresse de départ">
+    <option selected disabled>Adresse de départ</option>
+    <option value="paris">Paris</option>
+    <option value="lyon">Lyon</option>
+  </select>
+
+  <input type="date" class="form-control" name="debut" title="Début de location" aria-label="Début de location">
+  <input type="date" class="form-control" name="fin" title="Fin de location" aria-label="Fin de location">
+  <button type="submit" class="btn btn-success">Valider ma recherche</button>
+</form>
+
+
+  </header>
+
+  <!-- SECTION LISTE DES VOITURES -->
+  <main class="container py-5" arial-label="Liste des véhicules disponibles">
+    <div class="d-flex justify-content-between align-items-center flex-column flex-md-row mb-4 gap-2">
+    <h2 id="car-count" class="text-center text-md-start">4 résultat(s)</h2>
+    <select id="sort-select" class="form-select w-100 w-md-auto" title="Trier les véhicules">
+<option value="">Trier par</option>
+<option value="price-asc">Prix croissant</option>
+<option value="price-desc">Prix décroissant</option>
+<option value="power-asc">Puissance croissante</option>
+<option value="power-desc">Puissance décroissante</option>
+
+    </select>
+    </div>
+
+
+
+    <div class="row" id="car-list">
+      <!-- Les cartes voitures seront injectées ici par JS -->
+    </div>
+  </main>
+
+  <!-- FOOTER SIMPLE -->
+  <footer class="text-center py-4 bg-light">
+    <p>Notre Agence de Paris - 300 boulevard de Vaugirard, 75015 Paris</p>
+    <p>Ouvert 7j/7 de 9h à 13h et de 14h à 20h – 01 78 78 23 10 – contact@renter-car.com</p>
+  </footer>
+
+  <!-- JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js" defer></script>
+
+</body>
+</html>

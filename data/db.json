@@ -1,0 +1,60 @@
+{
+  "cars": [
+    {
+      "id": 1,
+      "model": "Peugeot 208",
+      "year": 2021,
+      "price": 80,
+      "cover": "images/peugeot-208.png",
+      "type": "Citadine",
+      "transmission": "manuelle",
+      "color": "noir",
+      "power_hp": 100,
+      "acceleration": 10.5,
+      "autonomy_km": 600,
+      "category": "Compacte"
+    },
+    {
+      "id": 2,
+      "model": "Opel Mokka",
+      "year": 2022,
+      "price": 95,
+      "cover": "images/opel-mokka.png",
+      "type": "SUV",
+      "transmission": "automatique",
+      "color": "blanc",
+      "power_hp": 130,
+      "acceleration": 9.2,
+      "autonomy_km": 550,
+      "category": "SUV Urbain"
+    },
+    {
+      "id": 3,
+      "model": "Audi A1",
+      "year": 2021,
+      "price": 120,
+      "cover": "images/audi-a1.png",
+      "type": "Citadine premium",
+      "transmission": "automatique",
+      "color": "gris",
+      "power_hp": 150,
+      "acceleration": 8.0,
+      "autonomy_km": 520,
+      "category": "Compacte"
+    },
+    {
+      "id": 4,
+      "model": "Ford Focus",
+      "year": 2020,
+      "price": 85,
+      "cover": "images/ford-focus.png",
+      "type": "Berline",
+      "transmission": "manuelle",
+      "color": "bleu",
+      "power_hp": 120,
+      "acceleration": 9.5,
+      "autonomy_km": 580,
+      "category": "Berline compacte"
+    }
+  ]
+}

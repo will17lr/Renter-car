@@ -1,0 +1,222 @@
+/* ====== GENERAL ====== */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  background-color: #fff;
+  color: #222;
+}
+
+h1, h2, h5 {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ====== NAVBAR ====== */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* ====== HERO (FOND D'ÉCRAN + FORM) ====== */
+.hero {
+  background: url('../images/fond-voiture.jpg') no-repeat center center;
+  background-size: cover;
+  min-height: 90vh;
+  padding: 6rem 1rem 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+.hero h1 {
+  font-size: 2.2rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 6px #000;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  text-shadow: 1px 1px 4px #000;
+  margin-bottom: 2rem;
+}
+
+/* ====== FORMULAIRE DE RECHERCHE RESPONSIVE ====== */
+.search-form {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: auto;
+}
+
+.search-form select,
+.search-form input,
+.search-form button {
+  width: 100%;
+  height: 48px;
+  font-size: 1rem;
+  padding: 0 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* Tablette (≥ 768px) */
+@media (min-width: 768px) {
+  .search-form {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .search-form select,
+  .search-form input {
+    flex: 1 1 30%;
+  }
+
+  .search-form button {
+    flex: 1 1 10%;
+    padding: 0 1rem;
+    white-space: nowrap;
+    background-color: #28a745;
+    color: white;
+    font-weight: bold;
+    border: none;
+  }
+
+  .search-form button:hover {
+    background-color: #218838;
+  }
+}
+
+/* Desktop (≥ 1200px) */
+@media (min-width: 1200px) {
+  .search-form {
+    flex-direction: row;
+    gap: 1rem;
+    max-width: 1100px;
+  }
+
+  .search-form select,
+  .search-form input {
+    flex: 0 1 20%;
+    height: 52px;
+  }
+
+  .search-form button {
+    flex: 0 0 auto;
+    height: 52px;
+    padding: 0 2rem;
+    max-width: 220px;
+  }
+}
+
+/* ====== SECTION VOITURES ====== */
+.container {
+  padding: 2rem 1rem;
+}
+
+#car-count {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+/* ====== CARDS ====== */
+.card {
+  border: none;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-img-top {
+  object-fit: contain;
+  background-color: #f9f9f9;
+  height: 180px;
+}
+
+.card-title {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.card-text {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.text-primary {
+  color: #007bff !important;
+  font-weight: bold;
+}
+
+.btn-success {
+  background-color: #28a745;
+  border: none;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+}
+
+/* ====== TRI SELECT ====== */
+#sort-select {
+  max-width: 200px;
+}
+
+/* ====== GRILLE RESPONSIVE DES VOITURES ====== */
+#car-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.car-col {
+  width: 100%;
+}
+
+/* Tablette (2 colonnes) */
+@media (min-width: 768px) {
+  .car-col {
+    width: 48%;
+  }
+}
+
+/* Petit desktop (3 colonnes) */
+@media (min-width: 1200px) {
+  .car-col {
+    width: 31%;
+  }
+}
+
+/* Grand écran (4 colonnes) */
+@media (min-width: 1600px) {
+  .car-col {
+    width: 23%;
+  }
+}
+
+/* ====== FOOTER ====== */
+footer {
+  background-color: #f8f9fa;
+  padding: 1.5rem 1rem;
+  font-size: 0.9rem;
+  text-align: center;
+  color: #333;
+}
