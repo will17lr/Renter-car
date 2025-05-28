@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Réserver un chauffeur - Renter-car</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Ton CSS -->
+  <link rel="stylesheet" href="css/accueil.css" />
+</head>
+<body>
+
+  <!-- ✅ NAVBAR -->
+  <header class="navbar navbar-expand-lg navbar-dark bg-dark px-4 py-3 shadow-sm">
+    <a class="navbar-brand fw-bold fs-4" href="index.html">🚗 Renter-car</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Ouvrir le menu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse ms-auto" id="navbarNav">
+      <ul class="navbar-nav ms-auto gap-2">
+        <li class="nav-item"><a class="nav-link" href="#">Louer une voiture</a></li>
+        <li class="nav-item">
+          <a class="nav-link" href="utilitaires.html">Utilitaires</a>
+        </li>
+        <li class="nav-item"><a class="nav-link active" href="chauffeur.html">Réserver un chauffeur</a></li>
+        <li class="nav-item"><a class="nav-link" href="agences.html">Nos agences</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Mon compte</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ✅ HERO SECTION -->
+  <section class="hero-section d-flex align-items-center justify-content-center text-white text-center">
+    <div class="overlay"></div>
+    <div class="position-relative z-1">
+      <h1 class="display-4 fw-bold">Réserver un chauffeur</h1>
+      <p class="lead">Service personnalisé, ponctuel et professionnel</p>
+    </div>
+  </section>
+
+  <!-- ✅ FORMULAIRE DE RÉSERVATION -->
+  <main class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <h2 class="text-center mb-4">Demande de réservation</h2>
+        <form>
+          <div class="mb-3">
+            <label for="nom" class="form-label">Nom complet</label>
+            <input type="text" class="form-control" id="nom" required />
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Adresse email</label>
+            <input type="email" class="form-control" id="email" required />
+          </div>
+
+          <div class="mb-3">
+            <label for="agence" class="form-label">Agence de départ</label>
+                <select class="form-select" id="agence" required>
+                    <option value="">Choisissez une agence</option>
+                </select>
+          </div>
+
+          <div class="mb-3">
+            <label for="depart" class="form-label">Lieu de départ</label>
+            <input type="text" class="form-control" id="depart" required />
+          </div>
+          <div class="mb-3">
+            <label for="destination" class="form-label">Destination</label>
+            <input type="text" class="form-control" id="destination" required />
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="date" class="form-label">Date</label>
+              <input type="date" class="form-control" id="date" required />
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="heure" class="form-label">Heure</label>
+              <input type="time" class="form-control" id="heure" required />
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="remarques" class="form-label">Remarques</label>
+            <textarea class="form-control" id="remarques" rows="4" placeholder="Indiquez des détails utiles (bagages, nombre de passagers...)"></textarea>
+          </div>
+          <button type="submit" class="btn btn-success">Envoyer la demande</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <!-- ✅ FOOTER -->
+  <footer class="bg-dark text-white text-center py-4 mt-5">
+    <p class="mb-0">&copy; 2025 Renter-car. Tous droits réservés.</p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    fetch("http://localhost:3000/agences")
+      .then(response => response.json())
+      .then(agences => {
+        const select = document.getElementById("agence");
+
+        agences.forEach(agence => {
+          const option = document.createElement("option");
+          option.value = agence.name;
+          option.textContent = `${agence.name} - ${agence.town}`;
+          select.appendChild(option);
+        });
+      })
+      .catch(error => {
+        console.error("Erreur de chargement des agences :", error);
+        const select = document.getElementById("agence");
+        select.innerHTML = `<option disabled>Chargement impossible</option>`;
+      });
+  });
+</script>
+
+</body>
+</html>
