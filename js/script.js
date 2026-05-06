@@ -62,16 +62,18 @@ sortSelect.addEventListener("change", (e) => {
 });
 
 // === Chargement des données ===
-fetch("http://localhost:3000/cars")
+fetch("./data/db.json")
   .then(res => {
-    if (!res.ok) throw new Error("Erreur serveur");
+    if (!res.ok) {
+      throw new Error("Impossible de charger data/db.json");
+    }
     return res.json();
   })
   .then(data => {
-    carsData = data;
-    renderCars(data);
+    carsData = data.cars;
+    renderCars(carsData);
   })
   .catch(error => {
-    console.error("Erreur de chargement :", error);
+    console.error("Erreur de chargement des véhicules :", error);
     container.innerHTML = "<p class='text-danger text-center'>Impossible de charger les véhicules.</p>";
   });
