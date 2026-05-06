@@ -101,26 +101,32 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
   <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    fetch("http://localhost:3000/agences")
-      .then(response => response.json())
-      .then(agences => {
-        const select = document.getElementById("agence");
+    document.addEventListener("DOMContentLoaded", () => {
+      fetch("./data/db.json")
+        .then(response => {
+          if (!response.ok) {
+            throw new Error("Impossible de charger data/db.json");
+          }
+          return response.json();
+        })
+        .then(data => {
+          const agences = data.agences;
+          const select = document.getElementById("agence");
 
-        agences.forEach(agence => {
-          const option = document.createElement("option");
-          option.value = agence.name;
-          option.textContent = `${agence.name} - ${agence.town}`;
-          select.appendChild(option);
+          agences.forEach(agence => {
+            const option = document.createElement("option");
+            option.value = agence.name;
+            option.textContent = `${agence.name} - ${agence.town}`;
+            select.appendChild(option);
+          });
+        })
+        .catch(error => {
+          console.error("Erreur de chargement des agences :", error);
+          const select = document.getElementById("agence");
+          select.innerHTML = `<option disabled>Chargement impossible</option>`;
         });
-      })
-      .catch(error => {
-        console.error("Erreur de chargement des agences :", error);
-        const select = document.getElementById("agence");
-        select.innerHTML = `<option disabled>Chargement impossible</option>`;
-      });
-  });
-</script>
+    });
+  </script>
 
 </body>
 </html>

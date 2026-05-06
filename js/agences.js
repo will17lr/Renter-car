@@ -1,7 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
-  fetch("http://localhost:3000/agences")
-    .then(response => response.json())
-    .then(agences => {
+  fetch("./data/db.json")
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("Impossible de charger data/db.json");
+      }
+      return response.json();
+    })
+    .then(data => {
+      const agences = data.agences;
       const container = document.getElementById("agences-container");
 
       if (!agences.length) {

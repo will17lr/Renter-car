@@ -57,9 +57,9 @@
             "category": "Berline compacte"
         }
     ],
-        "utilitaires": [
-            {
-                "id": 1,
+    "utilitaires": [
+        {
+            "id": 1,
             "model": "Peugeot Partner",
             "year": 2021,
             "price": 80,
@@ -105,7 +105,7 @@
             "model": "Toyota Proace",
             "year": 2020,
             "price": 85,
-            "cover": "images/ford-focus.png",
+            "cover": "images/toyota-proace.png",
             "type": "Berline",
             "transmission": "manuelle",
             "color": "bleu",
@@ -161,7 +161,7 @@
             "model": "Renault Alaskan",
             "year": 2020,
             "price": 85,
-            "cover": "images/ford-focus.png",
+            "cover": "images/renault-alaskan.png",
             "type": "Berline",
             "transmission": "manuelle",
             "color": "bleu",

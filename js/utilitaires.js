@@ -1,15 +1,21 @@
 document.addEventListener("DOMContentLoaded", () => {
-  fetch("http://localhost:3000/utilitaires")
-    .then(res => res.json())
+  fetch("./data/db.json")
+    .then(res => {
+      if (!res.ok) {
+        throw new Error("Impossible de charger data/db.json");
+      }
+      return res.json();
+    })
     .then(data => {
+      const utilitaires = data.utilitaires;
       const container = document.getElementById("utilitaires-container");
 
-      if (!data.length) {
+      if (!utilitaires.length) {
         container.innerHTML = `<p class="text-center">Aucun utilitaire disponible actuellement.</p>`;
         return;
       }
 
-      data.forEach(utilitaire => {
+      utilitaires.forEach(utilitaire => {
         const col = document.createElement("div");
         col.className = "col-md-4";
 
