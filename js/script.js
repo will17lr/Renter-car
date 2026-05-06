@@ -27,7 +27,7 @@ function renderCars(cars) {
           <h5 class="car-title">${car.model} (${car.year})</h5>
           <p class="car-text">${car.power_hp}ch – ${car.transmission} – ${car.autonomy_km} km</p>
           <p class="car-price">${car.price}€ / jour</p>
-          <a href="#" class="btn btn-success btn-reserve">Réserver</a>
+          <a href="contact.html" class="btn btn-success btn-reserve">Réserver</a>
         </div>
       </div>
     `;

@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
               <h5 class="card-title">${utilitaire.model} (${utilitaire.year})</h5>
               <p class="card-text">${utilitaire.power_hp}ch – ${utilitaire.transmission} – ${utilitaire.autonomy_km} km</p>
               <p class="card-text text-primary fw-bold">${utilitaire.price}€ / jour</p>
-              <a href="#" class="btn btn-success">Réserver</a>
+              <a href="contact.html" class="btn btn-success">Réserver</a>
             </div>
           </div>
         `;

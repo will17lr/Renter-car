@@ -12,25 +12,24 @@
 </head>
 <body>
 <!-- NAVBAR RESPONSIVE -->
-<nav role="navigation" class="navbar navbar-expand-xl navbar-dark bg-dark px-4 py-3 shadow-sm">
-  <a class="navbar-brand fw-bold fs-4" href="#">🚗 Renter-car</a>
-  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Ouvrir le menu">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold fs-4" href="index.html">🚗 Renter-car</a>
 
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav ms-auto gap-2">
-      <li class="nav-item"><a class="nav-link active" href="#">Louer une voiture</a></li>
-      <li class="nav-item">
-        <a class="nav-link" href="utilitaires.html">Utilitaires</a>
-      </li>
-      <li class="nav-item"><a class="nav-link" href="chauffeur.html">Réserver un chauffeur</a></li>
-      <li class="nav-item"><a class="nav-link" href="agences.html">Nos agences</a></li>
-      <li class="nav-item"><a class="nav-link" href="#">Mon compte</a></li>
-      <li class="nav-item">
-        <a class="nav-link" href="contact.html">Contact</a>
-      </li>
-    </ul>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Ouvrir le menu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html#voitures">Louer une voiture</a></li>
+        <li class="nav-item"><a class="nav-link" href="utilitaires.html">Utilitaires</a></li>
+        <li class="nav-item"><a class="nav-link" href="agences.html">Agences</a></li>
+        <li class="nav-item"><a class="nav-link" href="chauffeur.html">Chauffeur</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
   </div>
 </nav>
 
@@ -55,7 +54,7 @@
   </header>
 
   <!-- SECTION LISTE DES VOITURES -->
-  <main role="main" class="container py-5" aria-label="Liste des véhicules disponibles">
+  <main id="voitures" role="main" class="container py-5" aria-label="Liste des véhicules disponibles">
     <div class="d-flex justify-content-between align-items-center flex-column flex-md-row mb-4 gap-2">
     <h2 id="car-count" class="text-center text-md-start">4 résultat(s)</h2>
     <select id="sort-select" class="form-select w-100 w-md-auto" title="Trier les véhicules">
