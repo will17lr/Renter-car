@@ -26,37 +26,43 @@ img {
 .hero {
   background: url('../images/fond-voiture.jpg') no-repeat center center;
   background-size: cover;
-  min-height: 90vh;
-  padding: 6rem 1rem 4rem;
+  min-height: clamp(520px, 46vw, 650px);
+  padding: 3rem 1rem 2.5rem;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   text-align: center;
   color: white;
   position: relative;
 }
 
+.hero-content {
+  margin-top: 1rem;
+}
+
 .hero h1 {
-  font-size: 2.2rem;
+  font-size: clamp(2.25rem, 4vw, 3.7rem);
   font-weight: bold;
   text-shadow: 2px 2px 6px #000;
 }
 
 .hero p {
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 1.6vw, 1.35rem);
   text-shadow: 1px 1px 4px #000;
-  margin-bottom: 2rem;
+  margin-bottom: 0;
 }
 
 /* ====== FORMULAIRE DE RECHERCHE RESPONSIVE ====== */
 .search-form {
   width: 100%;
-  max-width: 1200px;
+  max-width: 960px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin: auto;
+  gap: 0.75rem;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 0.5rem;
 }
 
 .search-form select,
@@ -74,17 +80,17 @@ img {
 @media (min-width: 768px) {
   .search-form {
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: center;
   }
 
   .search-form select,
   .search-form input {
-    flex: 1 1 30%;
+    flex: 1 1 0;
   }
 
   .search-form button {
-    flex: 1 1 10%;
+    flex: 1.1 1 0;
     padding: 0 1rem;
     white-space: nowrap;
     background-color: #28a745;
@@ -181,35 +187,13 @@ img {
 
 /* ====== GRILLE RESPONSIVE DES VOITURES ====== */
 #car-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
+  display: block;
+  max-width: 960px;
+  margin: 0 auto;
 }
 
 .car-col {
   width: 100%;
-}
-
-/* Tablette (2 colonnes) */
-@media (min-width: 768px) {
-  .car-col {
-    width: 48%;
-  }
-}
-
-/* Petit desktop (3 colonnes) */
-@media (min-width: 1200px) {
-  .car-col {
-    width: 31%;
-  }
-}
-
-/* Grand écran (4 colonnes) */
-@media (min-width: 1600px) {
-  .car-col {
-    width: 23%;
-  }
 }
 
 /* ====== FOOTER ====== */
@@ -222,16 +206,18 @@ footer {
 }
 .car-horizontal {
   display: flex;
-  border-radius: 10px;
+  border-radius: 0;
   overflow: hidden;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+  box-shadow: none;
   background-color: #fff;
-  margin-bottom: 1rem;
+  border-bottom: 1px solid #e9ecef;
+  margin-bottom: 2.5rem;
+  padding-bottom: 2.5rem;
 }
 
 .car-image {
-  flex: 0 0 150px;
-  background-color: #f9f9f9;
+  flex: 0 0 45%;
+  background-color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -240,6 +226,7 @@ footer {
 
 .car-image img {
   width: 100%;
+  max-width: 350px;
   object-fit: contain;
 }
 
@@ -276,17 +263,17 @@ footer {
 .card.car-horizontal {
   display: flex;
   flex-direction: row;
-  padding: 1rem;
-  gap: 1rem;
+  padding: 0 0 2.5rem;
+  gap: 2rem;
   align-items: center;
-  height: 100%;
+  height: auto;
 }
 
 .card.car-horizontal img {
-  width: 120px;
+  width: min(100%, 350px);
   height: auto;
   object-fit: contain;
-  background: #f9f9f9;
+  background: #fff;
   border-radius: 5px;
 }
 
@@ -313,5 +300,81 @@ html {
 
   .navbar-expand-xl .navbar-toggler {
     display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero {
+    min-height: 640px;
+    padding: 3rem 0.85rem 10rem;
+    background-position: center top;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+    line-height: 1.1;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+  }
+
+  .search-form {
+    width: 100%;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .search-form select,
+  .search-form input,
+  .search-form button {
+    width: 100%;
+    min-height: 56px;
+    font-size: 1rem;
+  }
+
+  .card.car-horizontal {
+    gap: 1rem;
+    padding-bottom: 2rem;
+  }
+
+  .car-image {
+    flex: 0 0 55%;
+    padding: 0;
+  }
+
+  .car-info {
+    padding: 0;
+  }
+}
+
+/* ====== HERO ACCUEIL RESPONSIVE ====== */
+
+.hero-home {
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.45),
+      rgba(0, 0, 0, 0.45)
+    ),
+    url("../images/fond-voiture.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+@media (max-width: 767px) {
+  .hero-home {
+    background-attachment: scroll;
+    background-position: center top;
+  }
+
+  .hero-home h1 {
+    font-size: 2.4rem;
+    line-height: 1.1;
+  }
+
+  .hero-home p {
+    font-size: 1.15rem;
   }
 }

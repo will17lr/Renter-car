@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Renter-car - Location de véhicules de luxe</title>
-  <link rel="stylesheet" href="css/style.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
   <meta name="description" content="Renter-car : location de véhicules de luxe 24h/24, 7j/7 partout en France.">
 
@@ -34,27 +34,28 @@
 </nav>
 
   <!-- HERO AVEC FOND -->
-  <header class="hero d-flex flex-column justify-content-center align-items-center text-white text-center">
-    <h1>Bienvenue à bord</h1>
-    <p>Location de voiture 24h/24 et 7j/7</p>
-<form class="search-form" aria-label="Formulaire de recherche">
-  <select class="form-select" name="adresse" aria-label="Adresse de départ">
-    <option selected disabled>Adresse de départ</option>
-    <option value="paris">Paris</option>
-    <option value="lyon">Lyon</option>
-  </select>
+  <header class="hero hero-home text-white text-center">
+    <div class="hero-content">
+      <h1>Bienvenue à bord</h1>
+      <p>Location de voiture 24h/24 et 7j/7</p>
+    </div>
 
-  <input type="date" class="form-control" name="debut" title="Début de location" aria-label="Début de location">
-  <input type="date" class="form-control" name="fin" title="Fin de location" aria-label="Fin de location">
-  <button type="submit" class="btn btn-success" aria-label="Valider la recherche de véhicule">Valider ma recherche</button>
+    <form class="search-form" aria-label="Formulaire de recherche">
+      <select class="form-select" name="adresse" aria-label="Adresse de départ">
+        <option selected disabled>Adresse de départ</option>
+        <option value="paris">Paris</option>
+        <option value="lyon">Lyon</option>
+      </select>
 
-</form>
-
-
+      <input type="date" class="form-control" name="debut" title="Début de location" aria-label="Début de location">
+      <input type="date" class="form-control" name="fin" title="Fin de location" aria-label="Fin de location">
+      <button type="submit" class="btn btn-success" aria-label="Valider la recherche de véhicule">Valider ma recherche</button>
+    </form>
   </header>
 
+
   <!-- SECTION LISTE DES VOITURES -->
-  <main id="voitures" role="main" class="container py-5" aria-label="Liste des véhicules disponibles">
+  <main id="voitures" class="container py-5" aria-label="Liste des véhicules disponibles">
     <div class="d-flex justify-content-between align-items-center flex-column flex-md-row mb-4 gap-2">
     <h2 id="car-count" class="text-center text-md-start">4 résultat(s)</h2>
     <select id="sort-select" class="form-select w-100 w-md-auto" title="Trier les véhicules">
@@ -75,7 +76,7 @@
   </main>
 
   <!-- FOOTER SIMPLE -->
-  <footer role="contentinfo" class="text-center py-4 bg-light">
+  <footer class="text-center py-4 bg-light">
     <p>Notre Agence de Paris - 300 boulevard de Vaugirard, 75015 Paris</p>
     <p>Ouvert 7j/7 de 9h à 13h et de 14h à 20h – 01 78 78 23 10 – contact@renter-car.com</p>
   </footer>
