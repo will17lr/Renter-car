@@ -98,6 +98,13 @@ img {
   border-radius: 5px;
 }
 
+.search-form input[type="date"] {
+  min-height: 58px;
+  color: #222;
+  background-color: #fff;
+  font-size: 1rem;
+}
+
 /* Tablette : 3 champs côte à côte, bouton dessous */
 @media (min-width: 768px) and (max-width: 1199px) {
   .search-form {
