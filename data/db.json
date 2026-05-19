@@ -177,7 +177,7 @@
             "name": "Agence Paris",
             "address": "300 boulevard de Vaugirard",
             "zipcode": "75001",
-            "town": "Paris",
+            "value": "Paris",
             "phone": "01 49 78 21 33",
             "email": "contactParis@vtc.com"
         },
@@ -186,18 +186,27 @@
             "name": "Agence La Rochelle",
             "address": "3 place de l'hôtel de ville",
             "zipcode": "17000",
-            "town": "La Rochelle",
+            "value": "La Rochelle",
             "phone": "05 46 51 51 51",
-            "email": "contactLR@vtc.com"
+            "email": "contactLaRochelle@vtc.com"
         },
         {
             "id": 3,
             "name": "Agence Marseille",
             "address": "98 Quai du Port",
             "zipcode": "13002",
-            "town": "Marseille",
+            "value": "Marseille",
             "phone": "3013",
             "email": "contactMarseille@vtc.com"
+        },
+        {
+            "id": 4,
+            "name": "Agence Bordeaux",
+            "address": "105 Place des Jacobin",
+            "zipcode": "33000",
+            "value": "Bordeaux",
+            "phone": "3015",
+            "email": "contactBordeaux@vtc.com"
         }
     ]
 }

@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <div class="card-body">
               <h5 class="card-title">${agence.name}</h5>
               <p class="card-text mb-1">
-                <strong>Adresse :</strong><br>${agence.address}<br>${agence.zipcode} ${agence.town}
+                <strong>Adresse :</strong><br>${agence.address}<br>${agence.zipcode} ${agence.value}
               </p>
               <p class="card-text mb-1">
                 <strong>Téléphone :</strong><br><a href="tel:${agence.phone}" class="text-decoration-none">📞 ${agence.phone}</a>

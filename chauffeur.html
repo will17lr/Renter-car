@@ -118,7 +118,7 @@
           agences.forEach(agence => {
             const option = document.createElement("option");
             option.value = agence.name;
-            option.textContent = `${agence.name} - ${agence.town}`;
+            option.textContent = `${agence.name} - ${agence.value}`;
             select.appendChild(option);
           });
         })

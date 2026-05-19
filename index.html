@@ -40,17 +40,39 @@
       <p>Location de voiture 24h/24 et 7j/7</p>
     </div>
 
-    <form class="search-form" aria-label="Formulaire de recherche">
-      <select class="form-select" name="adresse" aria-label="Adresse de départ">
-        <option selected disabled>Adresse de départ</option>
-        <option value="paris">Paris</option>
-        <option value="lyon">Lyon</option>
-      </select>
+    <form class="search-form" id="search-form">
+      <div class="form-item">
+        <label for="depart" class="form-label">Agence de départ</label>
+        <select id="depart" name="depart" class="form-select" required>
+          <option value="">Choisir une agence</option>
+          <option value="Paris">Paris</option>
+          <option value="Lyon">Lyon</option>
+          <option value="Marseille">Marseille</option>
+          <option value="Bordeaux">Bordeaux</option>
+        </select>
+      </div>
 
-      <input type="date" class="form-control" name="debut" title="Début de location" aria-label="Début de location">
-      <input type="date" class="form-control" name="fin" title="Fin de location" aria-label="Fin de location">
-      <button type="submit" class="btn btn-success" aria-label="Valider la recherche de véhicule">Valider ma recherche</button>
+      <div class="form-item">
+        <label for="dateDepart" class="form-label">Date de départ</label>
+        <input type="date" id="dateDepart" name="dateDepart" class="form-control" required>
+      </div>
+        
+      <div class="form-item">
+        <label for="dateRetour" class="form-label">Date de retour</label>
+        <input type="date" id="dateRetour" name="dateRetour" class="form-control" required>
+      </div>
+        
+      <button type="submit" class="btn btn-success search-btn">
+        Voir les véhicules disponibles
+      </button>
     </form>
+
+    <div class="reservation-info">
+      <p><strong>Comment réserver ?</strong></p>
+      <p>1. Choisissez votre agence de départ.</p>
+      <p>2. Sélectionnez vos dates de location.</p>
+      <p>3. Validez la recherche puis choisissez votre véhicule.</p>
+    </div>
   </header>
 
 
