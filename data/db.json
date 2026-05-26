@@ -178,7 +178,7 @@
             "address": "300 boulevard de Vaugirard",
             "zipcode": "75001",
             "value": "Paris",
-            "phone": "01 49 78 21 33",
+            "phone": "06 36 42 30 00",
             "email": "contactParis@vtc.com"
         },
         {
@@ -187,7 +187,7 @@
             "address": "3 place de l'hôtel de ville",
             "zipcode": "17000",
             "value": "La Rochelle",
-            "phone": "05 46 51 51 51",
+            "phone": "05 46 51 51 5106 36 42 30 00",
             "email": "contactLaRochelle@vtc.com"
         },
         {
@@ -196,7 +196,7 @@
             "address": "98 Quai du Port",
             "zipcode": "13002",
             "value": "Marseille",
-            "phone": "3013",
+            "phone": "06 36 42 30 00",
             "email": "contactMarseille@vtc.com"
         },
         {
@@ -205,7 +205,7 @@
             "address": "105 Place des Jacobin",
             "zipcode": "33000",
             "value": "Bordeaux",
-            "phone": "3015",
+            "phone": "06 36 42 30 00",
             "email": "contactBordeaux@vtc.com"
         }
     ]
